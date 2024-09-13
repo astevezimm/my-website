@@ -1,14 +1,12 @@
-import type { MetaFunction } from "@remix-run/node"
-import { RootTitle } from "~/global"
+import { useEffect } from "react";
+import { useNavigate } from "@remix-run/react";
 
-export const meta: MetaFunction = () => {
-  return [
-    { title: `${RootTitle} | Blog` },
-    { name: "description", content: "Welcome to my thoughts and musings!" },
-  ]
-}
-
-// todo: redirect to /posts/1
 export default function HomePage() {
-  return ""
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    navigate("/posts/1");
+  }, [navigate]);
+
+  return null;
 }

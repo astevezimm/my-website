@@ -1,8 +1,16 @@
 import { useParams } from "react-router"
+import type {LoaderFunction, MetaFunction} from '@remix-run/node'
+import {makeMeta} from '~/global'
 
-// todo: add loader and meta like in _index
+type CategoryData = { category: string; description: string }
 
-export function BlogCategoryPage() {
+export const loader: LoaderFunction = async ({params}) => {
+    return {category: "test", description: "test"}
+}
+
+export const meta: MetaFunction = ({data}) => makeMeta((data as CategoryData).category, (data as CategoryData).description)
+
+export default function BlogCategoryPage() {
     const category = useParams().category
     return <>{category}</>
 }
