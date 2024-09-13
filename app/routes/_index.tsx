@@ -1,12 +1,14 @@
-import type { MetaFunction } from "@remix-run/node";
+import type { MetaFunction } from "@remix-run/node"
+import { RootTitle } from "~/global"
 
 export const meta: MetaFunction = () => {
   return [
-    { title: "New Remix App" },
-    { name: "description", content: "Welcome to Remix!" },
+    { title: `${RootTitle} | Blog` },
+    { name: "description", content: "Welcome to my thoughts and musings!" },
   ]
 }
 
-export default function Index() {
+// todo: redirect to /posts/1
+export default function HomePage() {
   return ""
 }
