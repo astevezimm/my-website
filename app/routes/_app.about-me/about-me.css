@@ -1,0 +1,56 @@
+.profile {
+    width: 15rem;
+    margin: 0 auto;
+    border-radius: 100%;
+}
+
+h3 {
+    font-size: 2rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+}
+
+.item-img {
+    width: 25%;
+    border-radius: 2rem;
+}
+
+.content {
+    display: flex;
+    gap: 3rem;
+    align-items: center;
+    & > p {
+        font-size: 1.2rem;
+        max-width: 45ch;
+        padding: 7px;
+        border-radius: 10px;
+        background-image: linear-gradient(to right, var(--background-light-color), transparent);
+    }
+}
+
+section:nth-of-type(even) .content {
+    flex-direction: row-reverse;
+    justify-content: left;
+}
+
+.boardgames {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    list-style: none;
+    font-size: 1.2rem;
+    & img {
+        border-radius: 10px;
+    }
+    & p {
+        background-color: var(--secondary-color);
+        color: var(--background-light-color);
+        width: fit-content;
+        margin: 0 auto;
+        padding: 3px 10px;
+        border-radius: 10px 10px 0 0;
+    }
+    & li:nth-of-type(even) p {
+        background-color: var(--primary-color);
+    }
+}
