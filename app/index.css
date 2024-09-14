@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Work+Sans:wght@400;700&display=swap');
+
+:root {
+    --primary-color: #FF9F29;
+    --secondary-color: #1A4D2E;
+    --background-color: #dacba8;
+    --background-light-color: #FAF3E3;
+    --shadow-color: #948b75;
+    --shadow: 1px 1px 3px var(--shadow-color);
+    --main-font: 'Work Sans', sans-serif;
+    --brand-font: 'Pacifico', cursive;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--background-light-color);
+    background-image: linear-gradient(to right, var(--background-color), var(--background-light-color));
+    font-family: var(--main-font);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    overflow-wrap: break-word;
+}
