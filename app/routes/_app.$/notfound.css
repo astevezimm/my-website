@@ -1,0 +1,24 @@
+.page-not-found {
+    display: block;
+    margin: 1rem auto;
+    width: 50%;
+    text-align: center;
+    font-size: 7rem;
+    text-decoration: none;
+    background-color: var(--primary-color);
+    color: var(--background-light-color);
+    padding: 1rem;
+    border-radius: 20px;
+    box-shadow: 3px 3px 3px #948b75;
+    text-shadow: 1px 1px 3px #948b75;
+    transition: all 0.3s;
+    &:hover {
+        translate: 0 5px;
+        box-shadow: 1px 1px 3px #948b75;
+        color: var(--background-color);
+    }
+}
+
+main {
+    animation: none;
+}

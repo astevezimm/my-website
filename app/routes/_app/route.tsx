@@ -5,12 +5,12 @@ import Main from "./main";
 import Footer from "./footer";
 import styles from "./layout.css?url";
 
-export const links: LinksFunction = () => [{ rel: "stylesheet", href: styles }];
+export const links: LinksFunction = () => [{ rel: "stylesheet", href: styles }]
 
 export default function App() {
-  const matches = useMatches();
+  const matches = useMatches()
   // @ts-expect-error - There should always be a title
-  const title = matches.findLast((match) => match.data.title).data.title;
+  const title = matches.findLast((match) => match.data.title).data.title
   return (
     <>
       <Header>{title}</Header>
