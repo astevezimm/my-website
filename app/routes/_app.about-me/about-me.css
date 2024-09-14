@@ -54,3 +54,51 @@ section:nth-of-type(even) .content {
         background-color: var(--primary-color);
     }
 }
+
+.slideshow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5rem;
+    & img {
+        width: 35rem;
+        height: 35rem;
+        object-fit: cover;
+        border-radius: 10px;
+        &.leave {
+            opacity: 0;
+            animation: image-leave 0.5s;
+        }
+        &.right.leave {
+            transform: translateX(100%);
+        }
+        &.left.leave {
+            transform: translateX(-100%);
+        }
+    }
+    & button {
+        width: 5rem;
+        height: 5rem;
+        border-radius: 10px;
+        font-size: 3rem;
+        background-color: var(--primary-color);
+        box-shadow: 2px 2px 5px black;
+        cursor: pointer;
+        transition: all 0.3s;
+        z-index: 1;
+        &:hover {
+            background-color: var(--secondary-color);
+            box-shadow: 1px 1px 2px black;
+        }
+    }
+}
+
+@keyframes image-leave {
+    from {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
