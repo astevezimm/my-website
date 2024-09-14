@@ -1,14 +1,16 @@
 import {useEffect, useState} from 'react'
 
 const LIST = [
-  "images/byu.jpg",
-  "images/hiking.jpg",
+  "images/kirbslide/k1.jpg",
+  "images/kirbslide/k2.jpg",
+  "images/kirbslide/k3.jpg",
+  "images/kirbslide/k4.jpg",
+  "images/kirbslide/k5.jpg",
   "images/kirby.jpg",
-  "images/mission.jpg",
 ]
 
 export default function KirbySlideShow() {
-  const [index, setIndex] = useState(0)
+  const [index, setIndex] = useState(Math.floor(Math.random() * LIST.length))
   const [className, setClassName] = useState('')
 
   useEffect(() => {
