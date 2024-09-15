@@ -1,4 +1,4 @@
-import {Link} from '@remix-run/react'
+import {NavLink} from '@remix-run/react'
 
 type Category = {
   category: string;
@@ -8,16 +8,16 @@ type Category = {
 export default function Categories({categories}: {categories: Category[]}) {
   return (
     <>
-      <h2>Categories</h2>
-      <ul>
+      <h2 className='cat-heading'>Categories:</h2>
+      <nav className='categories'>
         {categories.map(({category, category_slug}) => (
           <li key={category_slug}>
-            <Link to={`/categories/${category_slug}`}>
+            <NavLink to={`/categories/${category_slug}`}>
               {category}
-            </Link>
+            </NavLink>
           </li>
         ))}
-      </ul>
+      </nav>
     </>
   );
 }

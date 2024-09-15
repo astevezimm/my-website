@@ -28,7 +28,7 @@ header {
     }
 }
 
-nav {
+.main-nav {
     background-color: black;
     padding-top: 1rem;
     padding-bottom: 1rem;
@@ -51,15 +51,14 @@ nav {
         text-decoration: none;
         font-size: 1.2rem;
         transition: all 0.3s;
+        &.active, &:hover {
+            color: var(--primary-color);
+            scale: 1.05;
+        }
         @media (max-width: 768px) {
             font-size: 1rem;
         }
     }
-}
-
-.active {
-    color: var(--primary-color);
-    scale: 1.05;
 }
 
 .brand {
@@ -117,6 +116,7 @@ section {
     margin-bottom: 4rem;
     & > :not(h2) {
         margin-left: 1.5rem;
+        margin-right: 1.5rem;
     }
     &:nth-of-type(even) {
         --h2-background: var(--secondary-color);

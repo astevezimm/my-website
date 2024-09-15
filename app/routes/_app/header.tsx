@@ -1,13 +1,15 @@
 import {ReactNode} from 'react'
-import {NavLink} from '@remix-run/react'
+import {NavLink, useLocation} from '@remix-run/react'
 
 export default function Header({children}: { children: ReactNode }) {
+  const isCatPage = useLocation().pathname.includes('/categories');
+  
   return (
     <header>
-      <nav className="constrained-width">
+      <nav className="main-nav constrained-width">
         <span>
           <span className="brand">ASZ</span>
-          <NavLink to="/posts/1">Blog</NavLink>
+          <NavLink className={isCatPage ? "active": ""} to="/posts">Blog</NavLink>
           <NavLink to="/about-me">About Me</NavLink>
           <NavLink to="/unity3d-demos">Unity3D Demos</NavLink>
         </span>

@@ -1,5 +1,43 @@
+h2 {
+    padding: 0
+}
+
+main {
+    margin-left: 2rem;
+    margin-right: 2rem;
+}
+
+.cat-heading {
+    text-shadow: none;
+    color: #444;
+    font-size: 2rem;
+}
+
+.categories {
+    --main-color: #337ab7;
+    --select-color: #173753;
+    list-style: none;
+    display: flex;
+    row-gap: 1rem;
+    column-gap: 5rem;
+    flex-wrap: wrap;
+    font-size: 1.5rem;
+    & a {
+        text-decoration: none;
+        color: var(--main-color);
+        &:hover {
+            color: var(--select-color);
+        }
+        &.active {
+             color: var(--select-color);
+             text-decoration: underline;
+             font-size: 1.8rem;
+         }
+    }
+}
+
 .post-list {
-    
+    list-style: none;
 }
 
 .expanded {
