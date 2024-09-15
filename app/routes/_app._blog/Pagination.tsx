@@ -18,7 +18,7 @@ export default function Pagination({pageNumber, numberOfPages, count}: Paginatio
   )
 
   return (
-    <p>
+    <p className="pagination">
       Pages:&nbsp;
       {Array.from({length: numberOfPages - 1}, (_, i) => (<>{page(i)},&nbsp;</>))}
       {page(numberOfPages - 1)}
