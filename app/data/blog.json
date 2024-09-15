@@ -5,7 +5,8 @@
     "category": "JavaScript",
     "category_slug": "javascript",
     "image": "/images/kirbslide/k1.jpg",
-    "slug": "understanding-javascript-closures"
+    "slug": "understanding-javascript-closures",
+    "blurb": "Learn how JavaScript closures work and how they can be used to create private variables and functions in your code.\n\nIn this article, we'll explore the concept of closures in JavaScript and how they can be used to create private variables and functions in your code. We'll also look at some common use cases for closures and how they can help you write more maintainable and modular code.\n\nBy the end of this article, you'll have a solid understanding of closures in JavaScript and how you can use them to improve your code."
   },
   {
     "title": "A Guide to Modern React Patterns",

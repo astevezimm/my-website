@@ -17,9 +17,9 @@ export default function PostListing({ title, date, category, image, slug, blurb 
         <p>{date}</p>
         <p>{category}</p>
         {blurb ? (
-          <div>
+          <div className="expanded-bottom">
             <img src={image} alt={title}/>
-            <p>{blurb}</p>
+            <p className="blurb">{blurb}</p>
           </div>
         ) : <img src={image} alt={title}/>}
       </Link>
