@@ -9,7 +9,7 @@ export type PostListingProps = {
   blurb?: string
 }
 
-export default function PostListing({ title, date, category, image, slug, blurb='' }: PostListingProps) {
+export default function PostListing({ title, date, category, image, slug, blurb }: PostListingProps) {
   return (
     <li className={blurb ? "expanded" : ""}>
       <Link to={`/post/${slug}`}>
