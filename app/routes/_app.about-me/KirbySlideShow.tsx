@@ -6,6 +6,7 @@ const LIST = [
   "images/kirbslide/k3.jpg",
   "images/kirbslide/k4.jpg",
   "images/kirbslide/k5.jpg",
+  "images/kirbslide/k6.jpg",
   "images/kirby.jpg",
 ]
 
