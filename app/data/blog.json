@@ -1,0 +1,146 @@
+[
+  {
+    "title": "Understanding JavaScript Closures",
+    "date": "2023-10-01",
+    "category": "JavaScript",
+    "category_slug": "javascript",
+    "image": "/images/kirbslide/k1.jpg",
+    "slug": "understanding-javascript-closures"
+  },
+  {
+    "title": "A Guide to Modern React Patterns",
+    "date": "2023-09-15",
+    "category": "React",
+    "category_slug": "react",
+    "image": "/images/kirbslide/k2.jpg",
+    "slug": "guide-to-modern-react-patterns"
+  },
+  {
+    "title": "Introduction to TypeScript",
+    "date": "2023-08-20",
+    "category": "TypeScript",
+    "category_slug": "typescript",
+    "image": "/images/kirbslide/k3.jpg",
+    "slug": "introduction-to-typescript"
+  },
+  {
+    "title": "Building RESTful APIs with Node.js",
+    "date": "2023-07-30",
+    "category": "Node.js",
+    "category_slug": "nodejs",
+    "image": "/images/kirbslide/k4.jpg",
+    "slug": "building-restful-apis-with-nodejs"
+  },
+  {
+    "title": "CSS Grid Layout: A Comprehensive Guide",
+    "date": "2023-06-25",
+    "category": "CSS",
+    "category_slug": "css",
+    "image": "/images/kirbslide/k5.jpg",
+    "slug": "css-grid-layout-guide"
+  },
+  {
+    "title": "Getting Started with Vue.js",
+    "date": "2023-05-10",
+    "category": "Vue.js",
+    "category_slug": "vuejs",
+    "image": "/images/kirbslide/k1.jpg",
+    "slug": "getting-started-with-vuejs"
+  },
+  {
+    "title": "The Basics of Web Accessibility",
+    "date": "2023-04-05",
+    "category": "Web Development",
+    "category_slug": "web-development",
+    "image": "/images/kirbslide/k2.jpg",
+    "slug": "basics-of-web-accessibility"
+  },
+  {
+    "title": "An Introduction to GraphQL",
+    "date": "2023-03-15",
+    "category": "GraphQL",
+    "category_slug": "graphql",
+    "image": "/images/kirbslide/k3.jpg",
+    "slug": "introduction-to-graphql"
+  },
+  {
+    "title": "Responsive Web Design: A Complete Guide",
+    "date": "2023-02-20",
+    "category": "Web Design",
+    "category_slug": "web-design",
+    "image": "/images/kirbslide/k4.jpg",
+    "slug": "responsive-web-design-guide"
+  },
+  {
+    "title": "JavaScript Promises: A Practical Guide",
+    "date": "2023-01-10",
+    "category": "JavaScript",
+    "category_slug": "javascript",
+    "image": "/images/kirbslide/k5.jpg",
+    "slug": "javascript-promises-guide"
+  },
+  {
+    "title": "Sass Crash Course: Getting Started",
+    "date": "2022-12-05",
+    "category": "Sass",
+    "category_slug": "sass",
+    "image": "/images/kirbslide/k1.jpg",
+    "slug": "sass-crash-course"
+  },
+  {
+    "title": "React Native: Building Mobile Apps with JavaScript",
+    "date": "2022-11-20",
+    "category": "React Native",
+    "category_slug": "react-native",
+    "image": "/images/kirbslide/k2.jpg",
+    "slug": "react-native-building-mobile-apps"
+  },
+  {
+    "title": "Introduction to Web Components",
+    "date": "2022-10-15",
+    "category": "Web Components",
+    "category_slug": "web-components",
+    "image": "/images/kirbslide/k3.jpg",
+    "slug": "introduction-to-web-components"
+  },
+  {
+    "title": "Node.js Basics: Getting Started",
+    "date": "2022-09-10",
+    "category": "Node.js",
+    "category_slug": "nodejs",
+    "image": "/images/kirbslide/k4.jpg",
+    "slug": "nodejs-basics-getting-started"
+  },
+  {
+    "title": "CSS Flexbox Layout: A Complete Guide",
+    "date": "2022-08-05",
+    "category": "CSS",
+    "category_slug": "css",
+    "image": "/images/kirbslide/k5.jpg",
+    "slug": "css-flexbox-layout-guide"
+  },
+  {
+    "title": "Vue.js Components: A Practical Guide",
+    "date": "2022-07-10",
+    "category": "Vue.js",
+    "category_slug": "vuejs",
+    "image": "/images/kirbslide/k1.jpg",
+    "slug": "vuejs-components-guide"
+  },
+  {
+    "title": "Web Development Tools: Essential Software for Developers",
+    "date": "2022-06-15",
+    "category": "Web Development",
+    "category_slug": "web-development",
+    "image": "/images/kirbslide/k2.jpg",
+    "slug": "web-dev-tools-essential-software"
+  },
+  {
+    "title": "React Hooks: A Complete Guide",
+    "date": "2022-05-20",
+    "category": "React",
+    "category_slug": "react",
+    "image": "/images/kirbslide/k3.jpg",
+    "slug": "react-hooks-complete-guide"
+  }
+]

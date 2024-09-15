@@ -16,13 +16,15 @@ export const links: LinksFunction = () => [{ rel: "stylesheet", href: styles }]
 
 export default function BlogParent() {
   const postsPerPage = 25
+  const matches = useMatches()
   // @ts-expect-error - should be able to destructure the data
-  const {posts, categories, pageNumber} = useMatches().find(match => match.data.posts).data
-  const pageNumberValue = +pageNumber || 1
-  const pagination = (
+  const {posts, categories, pageNumber} = matches.find(match => match.data && match.data.posts).data
+  const numberOfPages = Math.ceil(posts.length / postsPerPage)
+  const pageNumberValue = Math.min(+pageNumber || 1, numberOfPages)
+  const pagination = (count: string) => (
     <>
       {posts.length > postsPerPage &&
-        <Pagination pageNumber={pageNumberValue} numberOfPages={Math.ceil(posts.length / postsPerPage)} />
+        <Pagination pageNumber={pageNumberValue} numberOfPages={numberOfPages} count={count} />
       }
     </>
   )
@@ -30,9 +32,9 @@ export default function BlogParent() {
   return (
     <>
       <Categories categories={categories} />
-      {pagination}
+      {pagination('1')}
       <PostList posts={posts.slice((pageNumberValue - 1) * postsPerPage, pageNumberValue * postsPerPage)} />
-      {pagination}
+      {pagination('2')}
     </>
   )
 }

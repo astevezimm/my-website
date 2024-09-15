@@ -6,7 +6,6 @@ export type PostListingProps = {
   category: string
   image: string
   slug: string
-  expanded: boolean
   blurb?: string
 }
 
