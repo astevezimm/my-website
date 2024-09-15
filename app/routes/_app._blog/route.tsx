@@ -19,13 +19,20 @@ export default function BlogParent() {
   // @ts-expect-error - should be able to destructure the data
   const {posts, categories, pageNumber} = useMatches().find(match => match.data.posts).data
   const pageNumberValue = +pageNumber || 1
-  return (
+  const pagination = (
     <>
-      <Categories categories={categories} />
-      <PostList posts={posts.slice((pageNumberValue - 1) * postsPerPage, pageNumberValue * postsPerPage)} />
       {posts.length > postsPerPage &&
         <Pagination pageNumber={pageNumberValue} numberOfPages={Math.ceil(posts.length / postsPerPage)} />
       }
+    </>
+  )
+  
+  return (
+    <>
+      <Categories categories={categories} />
+      {pagination}
+      <PostList posts={posts.slice((pageNumberValue - 1) * postsPerPage, pageNumberValue * postsPerPage)} />
+      {pagination}
     </>
   )
 }
