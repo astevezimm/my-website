@@ -19,6 +19,12 @@
 .category {
     font-style: italic;
     margin-left: 3rem;
+    & a {
+        color: var(--link-color);
+    }
+    & a:hover {
+        color: var(--hover-color);
+    }
     @media (max-width: 425px) {
         margin-left: 0;
     }
