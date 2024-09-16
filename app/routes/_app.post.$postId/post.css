@@ -1,0 +1,29 @@
+.prevnext {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+    & a {
+        text-decoration: none;
+        color: var(--link-color);
+    }
+    & a:hover {
+        color: var(--hover-color);
+    }
+}
+
+.post-header {
+    font-size: 1.5rem;
+    margin-bottom: 1.2rem;
+}
+
+.category {
+    font-style: italic;
+    margin-left: 3rem;
+}
+
+.post-content {
+    margin: 0 6rem 1rem 6rem;
+    & p {
+        line-height: 1.5rem;
+    }
+}

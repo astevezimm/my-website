@@ -2,6 +2,7 @@ import {Link} from '@remix-run/react'
 import {formatDate} from '~/global'
 import Markdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
+import PrevNext from '~/routes/_app.post.$postId/PrevNext'
 
 export type PostProps = {
   markup_content: string
@@ -23,17 +24,15 @@ export default function Post({
   
   return (
     <>
-      <Link to={`/posts/${url}/prev`}>&lt; Prev</Link>
-      <Link to={`/posts/${url}/next`}>Next &gt;</Link>
+      <PrevNext url={url} />
       
-      <p>{formatDate(date)}</p>
-      <p>Category: <Link to={`/categories/${cat_url}`}>{category}</Link></p>
-      <p>{cat_extended_descript}</p>
+      <p className="post-header">{formatDate(date)}</p>
+      <p className="post-header category">Category: <Link to={`/categories/${cat_url}`}>{category}</Link></p>
+      <p className="post-header category">{cat_extended_descript}</p>
       
-      <Markdown remarkPlugins={[remarkGfm]}>{markup_content}</Markdown>
+      <Markdown className="post-content" remarkPlugins={[remarkGfm]}>{markup_content}</Markdown>
       
-      <Link to={`/posts/${url}/prev`}>&lt; Prev</Link>
-      <Link to={`/posts/${url}/next`}>Next &gt;</Link>
+      <PrevNext url={url} />
     </>
   )
 }
