@@ -4,7 +4,7 @@ export default function PostList({ posts }: { posts: PostListingProps[] }) {
   return (
     <ul className="post-list">
       {posts.map((post) => (
-        <PostListing key={post.slug} {...post} />
+        <PostListing key={post.url} {...post} />
       ))}
     </ul>
   )

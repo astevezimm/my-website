@@ -4,10 +4,10 @@ import mongoose from 'mongoose'
 config();
 mongoose.connect(process.env.DB_URL as string);
 
-// Add markup_content to this, after it's been populated in the database
 const postSchema = new mongoose.Schema({
   title: String,
-  content: String,
+  content: String, // old content from old version of the site
+  markup_content: String, // new content for the new version of the site
   url: String,
   date: Date,
   category: String,
@@ -22,7 +22,7 @@ export async function fetchPostList() {
 }
 
 export async function fetchPost(url: string) {
-  return Post.findOne({url}).select('-content -url -img_url')
+  return Post.findOne({url}).select('-content -img_url')
 }
 
 export function extractCategories(posts: Array<{cat_url: string, category: string}>) {

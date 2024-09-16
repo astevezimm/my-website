@@ -1,4 +1,5 @@
 import {Link} from '@remix-run/react'
+import {formatDate} from '~/global'
 
 export type PostListingProps = {
   title: string
@@ -14,7 +15,7 @@ export default function PostListing({ title, date, category, img_url, url, blurb
     <li className={blurb ? "expanded" : ""}>
       <Link to={`/post/${url}`}>
         <h2>{title}</h2>
-        <p>{(new Date(date).toLocaleDateString("en-US", {month: "long", day: "numeric", year: "numeric"}))}</p>
+        <p>{formatDate(date)}</p>
         <p>{category}</p>
         {blurb ? (
           <div className="expanded-bottom">

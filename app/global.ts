@@ -8,3 +8,7 @@ export function makeMeta(title: string, description: string, image: string = "/i
     { name: "og:image", content: image },
   ]
 }
+
+export function formatDate(date: string) {
+  return new Date(date).toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" })
+}
