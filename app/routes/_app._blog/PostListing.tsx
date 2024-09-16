@@ -4,24 +4,24 @@ export type PostListingProps = {
   title: string
   date: string
   category: string
-  image: string
-  slug: string
+  img_url: string
+  url: string
   blurb?: string
 }
 
-export default function PostListing({ title, date, category, image, slug, blurb }: PostListingProps) {
+export default function PostListing({ title, date, category, img_url, url, blurb }: PostListingProps) {
   return (
     <li className={blurb ? "expanded" : ""}>
-      <Link to={`/post/${slug}`}>
+      <Link to={`/post/${url}`}>
         <h2>{title}</h2>
-        <p>{date}</p>
+        <p>{(new Date(date).toLocaleDateString("en-US", {month: "long", day: "numeric", year: "numeric"}))}</p>
         <p>{category}</p>
         {blurb ? (
           <div className="expanded-bottom">
-            <img src={image} alt={title}/>
+            <img src={`/images/blog/${img_url}`} alt={title}/>
             <p className="blurb">{blurb}</p>
           </div>
-        ) : <img src={image} alt={title}/>}
+        ) : <img src={`/images/blog/${img_url}`} alt={title}/>}
       </Link>
     </li>
   )
