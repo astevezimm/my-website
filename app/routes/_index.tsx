@@ -1,12 +1,12 @@
-import { useEffect } from "react";
-import { useNavigate } from "@remix-run/react";
+import { useEffect } from "react"
+import { useNavigate } from "@remix-run/react"
 
 export default function HomePage() {
-  const navigate = useNavigate();
+  const navigate = useNavigate()
 
   useEffect(() => {
-    navigate("/posts/1");
-  }, [navigate]);
+    navigate("/posts/1")
+  }, [navigate])
 
-  return null;
+  return null
 }
