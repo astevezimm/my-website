@@ -19,11 +19,20 @@
 .category {
     font-style: italic;
     margin-left: 3rem;
+    @media (max-width: 425px) {
+        margin-left: 0;
+    }
 }
 
 .post-content {
     margin: 0 6rem 1rem 6rem;
     & p {
         line-height: 1.5rem;
+    }
+    @media (max-width: 768px) {
+        margin: 0 3rem 1rem 3rem;
+    }
+    @media (max-width: 425px) {
+        margin: 0 0 1rem 0;
     }
 }
