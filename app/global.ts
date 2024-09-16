@@ -1,4 +1,4 @@
-const RootTitle = "Andrew Zimmerman"
+export const RootTitle = "Andrew Zimmerman"
 
 export function makeMeta(title: string, description: string, image: string = "/images/kirby.jpg") {
   return [

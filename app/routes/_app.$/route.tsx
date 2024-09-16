@@ -1,10 +1,13 @@
-import {json, LinksFunction, LoaderFunction} from "@remix-run/node"
+import {json, LinksFunction, LoaderFunction, MetaFunction} from "@remix-run/node"
 import styles from './notfound.css?url'
 import {Link} from '@remix-run/react'
+import {RootTitle} from '~/global'
 
 export const loader: LoaderFunction = async () => {
   return json({ title: "Oops!" }, { status: 404 })
 }
+
+export const meta: MetaFunction = () => [{ title: `${RootTitle} | Oops!` }]
 
 export const links: LinksFunction = () => [{ rel: "stylesheet", href: styles }]
 
