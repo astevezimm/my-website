@@ -72,3 +72,18 @@
         margin: 0;
     }
 }
+
+.poems {
+    & blockquote {
+        border: none;
+        margin-top: -1rem;
+        margin-bottom: 0;
+        & + hr::after {
+            display: none;
+        }
+    }
+    & code {
+        font-style: italic;
+        color: red;
+    }
+}

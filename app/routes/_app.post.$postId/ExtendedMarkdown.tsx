@@ -7,11 +7,11 @@ const COMPONENT_MAP: { [key: string]: React.ComponentType<{ key: number; data: s
   "youtube": Youtube
 }
 
-function processMarkdown(markdown: string) {
+function processMarkdown(markdown: string, isPoems=false) {
   return (
     <Markdown
       remarkPlugins={[remarkGfm]}
-      className="post-content"
+      className={`post-content ${isPoems ? 'poems' : ''}`}
     >
       {markdown}
     </Markdown>
@@ -27,7 +27,7 @@ function createCustomComponent(mapkey: string, data: string, key: number) {
 const apendPart = (md: Array<string>, part: string) => `${md[md.length - 1]}\n${part}`
 
 export default function ExtendedMarkdown({children, isPoems}: {children: string, isPoems: boolean}) {
-  if (isPoems) return processMarkdown(children)
+  if (isPoems) return processMarkdown(children, isPoems)
   
   const parts = children.split(/[^\S\n]*\n[^\S\n]*/)
   // @ts-expect-error - md is an array of strings and React components
