@@ -23,8 +23,6 @@ export const meta: MetaFunction = ({data}) => makeMeta((data as PostData).title,
 export default function BlogPostPage() {
     const navigate = useNavigate()
     const data = useLoaderData()
-    
-    console.log("here")
 
     useEffect(() => {
         if ((data as {status: number}).status === 404) navigate('/404')
