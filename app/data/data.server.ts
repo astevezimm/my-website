@@ -32,6 +32,6 @@ export function extractCategories(posts: Array<{cat_url: string, category: strin
       if (!post) {
         return null;
       }
-      return {category: post.category, category_slug: post.cat_url};
+      return {category: post.category, cat_url: post.cat_url};
     });
 }
