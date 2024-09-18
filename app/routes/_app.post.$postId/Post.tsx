@@ -1,6 +1,6 @@
 import {Link} from '@remix-run/react'
 import {formatDate} from '~/global'
-import Markdown from './ExtendedMarkdown'
+import Markdown from '~/components/ExtendedMarkdown'
 import PrevNext from './PrevNext'
 
 export type PostProps = {

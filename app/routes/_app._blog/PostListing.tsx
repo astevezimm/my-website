@@ -1,5 +1,6 @@
 import {Link} from '@remix-run/react'
 import {formatDate} from '~/global'
+import Markdown from '~/components/ExtendedMarkdown'
 
 export type PostListingProps = {
   title: string
@@ -20,7 +21,11 @@ export default function PostListing({ title, date, category, img_url, url, blurb
         {blurb ? (
           <div className="expanded-bottom">
             <img src={`/images/blog/${img_url.replace(".png", ".jpg")}`} alt={title}/>
-            <p className="blurb">{blurb}</p>
+            <div className="blurb">
+              <Markdown isPoems={false} isBlurb={true}>
+                {blurb}
+              </Markdown>
+            </div>
           </div>
         ) : <img src={`/images/blog/${img_url.replace(".png", ".jpg")}`} alt={title}/>}
       </Link>

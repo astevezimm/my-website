@@ -1,13 +1,16 @@
 import type {LoaderFunction} from '@remix-run/node'
-import {extractCategories, fetchPostList} from '~/data/data.server'
+import {extractCategories, fetchBlurb, fetchPostList} from '~/data/data.server'
 
 export const loader: LoaderFunction = async ({params}) => {
   const posts = await fetchPostList()
-  const categories = extractCategories(posts as Array<{cat_url: string, category: string}>);
+  const categories = extractCategories(posts as Array<{cat_url: string, category: string}>)
+  const postsByCategory = posts.filter(post => post.cat_url === params.category)
+  const blurb = await fetchBlurb(postsByCategory[0].id, params.category as string)
   return {
-    posts: posts.filter(post => post.cat_url === params.category),
+    posts: postsByCategory,
     categories,
-    pageNumber: params.pageNumber
+    pageNumber: params.pageNumber,
+    blurb,
   }
 }
 

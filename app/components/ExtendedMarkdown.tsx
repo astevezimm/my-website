@@ -26,8 +26,9 @@ function createCustomComponent(mapkey: string, data: string, key: number) {
 
 const apendPart = (md: Array<string>, part: string) => `${md[md.length - 1]}\n${part}`
 
-export default function ExtendedMarkdown({children, isPoems}: {children: string, isPoems: boolean}) {
+export default function ExtendedMarkdown({children, isPoems, isBlurb=false}: {children: string, isPoems: boolean, isBlurb?: boolean}) {
   if (isPoems) return processMarkdown(children, isPoems)
+  if (isBlurb) return processMarkdown(children, false)
   
   const parts = children.split(/[^\S\n]*\n[^\S\n]*/)
   // @ts-expect-error - md is an array of strings and React components

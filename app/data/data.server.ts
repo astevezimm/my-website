@@ -44,3 +44,9 @@ export async function isFirstOrLast(id: string) {
     isLast: lastPost?._id.toString() === id
   }
 }
+
+export async function fetchBlurb(id: string, category: string) {
+  if (category.toLowerCase() === "poetry") return null
+  const post = await Post.findById(id).select('markup_content')
+  return (post as unknown as {markup_content: string}).markup_content.slice(0, 1500)
+}

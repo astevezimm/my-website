@@ -18,7 +18,7 @@ export default function BlogParent() {
   const postsPerPage = 25
   const matches = useMatches()
   // @ts-expect-error - should be able to destructure the data
-  const {posts, categories, pageNumber} = matches.find(match => match.data && match.data.posts).data
+  const {posts, categories, pageNumber, blurb} = matches.find(match => match.data && match.data.posts).data
   const numberOfPages = Math.ceil(posts.length / postsPerPage)
   const pageNumberValue = Math.min(+pageNumber || 1, numberOfPages)
   const pagination = (count: string) => (
@@ -28,6 +28,7 @@ export default function BlogParent() {
       }
     </>
   )
+  if (blurb) posts[0].blurb = blurb
   
   return (
     <>
