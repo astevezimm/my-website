@@ -10,6 +10,9 @@
         color: var(--hover-color);
     }
 }
+.keep-next-right {
+    justify-content: right;
+}
 
 .post-header {
     font-size: 1.5rem;

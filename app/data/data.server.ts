@@ -28,10 +28,19 @@ export async function fetchPost(url: string) {
 export function extractCategories(posts: Array<{cat_url: string, category: string}>) {
   return Array.from(new Set(posts.map(post => post.cat_url)))
     .map(category_slug => {
-      const post = posts.find(post => post.cat_url === category_slug);
+      const post = posts.find(post => post.cat_url === category_slug)
       if (!post) {
-        return null;
+        return null
       }
-      return {category: post.category, cat_url: post.cat_url};
-    });
+      return {category: post.category, cat_url: post.cat_url}
+    })
+}
+
+export async function isFirstOrLast(id: string) {
+  const firstPost = await Post.findOne().sort({ date: -1 }).select('_id')
+  const lastPost = await Post.findOne().sort({ date: 1 }).select('_id')
+  return {
+    isFirst: firstPost?._id.toString() === id,
+    isLast: lastPost?._id.toString() === id
+  }
 }

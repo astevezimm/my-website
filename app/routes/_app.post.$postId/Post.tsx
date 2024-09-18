@@ -10,6 +10,8 @@ export type PostProps = {
   category: string
   cat_extended_descript: string
   cat_url: string
+  isFirst: boolean
+  isLast: boolean
 }
 
 export default function Post({
@@ -19,11 +21,13 @@ export default function Post({
   category,
   cat_extended_descript,
   cat_url,
+  isFirst,
+  isLast
 }: PostProps) {
 
   return (
     <>
-      <PrevNext url={url} />
+      <PrevNext url={url} isFirst={isFirst} isLast={isLast} />
 
       <p className="post-header">{formatDate(date)}</p>
       <p className="post-header category">
@@ -35,7 +39,7 @@ export default function Post({
         {markup_content}
       </Markdown>
 
-      <PrevNext url={url} />
+      <PrevNext url={url} isFirst={isFirst} isLast={isLast} />
     </>
   );
 }

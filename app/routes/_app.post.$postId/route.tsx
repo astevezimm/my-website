@@ -1,6 +1,6 @@
 import type {LinksFunction, LoaderFunction, MetaFunction} from '@remix-run/node'
 import {makeMeta} from '~/global'
-import {fetchPost} from '~/data/data.server'
+import {fetchPost, isFirstOrLast} from '~/data/data.server'
 import {useLoaderData, useNavigate} from '@remix-run/react'
 import Post, {PostProps} from './Post'
 import styles from './post.css?url'
@@ -13,7 +13,8 @@ export const loader: LoaderFunction = async ({params}) => {
     if (post === null) {
         return {status: 404, title: "-", summary: ""}
     }
-    return {title: post.title, post, summary: post.content?.slice(0, 100)}
+    const {isFirst, isLast} = await isFirstOrLast(post.id)
+    return {title: post.title, post, isFirst, isLast, summary: post.content?.slice(0, 100)}
 }
 
 export const links: LinksFunction = () => [{rel: 'stylesheet', href: styles}]
@@ -28,6 +29,6 @@ export default function BlogPostPage() {
         if ((data as {status: number}).status === 404) navigate('/404')
     }, [data, navigate]);
     
-    const post = (data as {post: object}).post as PostProps
-    return post && <Post {...post} />
+    const {post, isFirst, isLast} = (data as {post: PostProps, isFirst: boolean, isLast: boolean})
+    return post && <Post {...post} isFirst={isFirst} isLast={isLast} />
 }

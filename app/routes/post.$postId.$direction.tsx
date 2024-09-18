@@ -10,10 +10,10 @@ export const loader: LoaderFunction = async ({params}) => {
     return {status: 404}
   }
   if (params.direction === 'prev') {
-    return {url: posts[(current - 1 + posts.length) % posts.length].url}
+    return {url: posts[current - 1].url}
   }
   if (params.direction === 'next') {
-    return {url: posts[(current + 1) % posts.length].url}
+    return {url: posts[current + 1].url}
   }
   return {status: 404}
 }
