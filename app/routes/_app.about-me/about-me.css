@@ -75,6 +75,9 @@ section:nth-of-type(even) .content {
         &.left.leave {
             transform: translateX(-100%);
         }
+        &.hide {
+            visibility: hidden;
+        }
     }
     & button {
         width: 5rem;

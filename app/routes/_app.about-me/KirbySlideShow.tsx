@@ -19,12 +19,18 @@ export default function KirbySlideShow() {
     const prev = () => setIndex(index => (index + LIST.length - 1) % LIST.length)
     const next = () => setIndex(index => (index + 1) % LIST.length)
     const timeout = setTimeout(() => {
-      setClassName('')
+      setClassName('hide')
       if (className.includes('left')) prev()
       else if (className.includes('right')) next()
     }, 500)
     return () => clearTimeout(timeout);
   }, [className]);
+
+  useEffect(() => {
+    if (!className.includes('hide')) return
+    const timeout = setTimeout(() => setClassName(''), 100)
+    return () => clearTimeout(timeout);
+  }, [index]);
   
   return (
     <div className="slideshow">
