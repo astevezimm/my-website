@@ -25,7 +25,7 @@ export default function PrevNextPage() {
   useEffect(() => {
     if ((data as {status: number}).status === 404)
       navigate("/404")
-    navigate(`/post/${(data as {url: string}).url}`)
+    navigate(`/post/${(data as {url: string}).url}`, { replace: true })
   }, [navigate, data])
 
   return null
