@@ -6,7 +6,7 @@ import Post, {PostProps} from './Post'
 import styles from './post.css?url'
 import {useEffect} from 'react'
 
-type PostData = { title: string; content: string; summary: string }
+type PostData = { title: string; content: string; summary: string, image: string }
 
 export const loader: LoaderFunction = async ({params}) => {
     const post = await fetchPost(params.postId as string)
@@ -14,12 +14,12 @@ export const loader: LoaderFunction = async ({params}) => {
         return {status: 404, title: "-", summary: ""}
     }
     const {isFirst, isLast} = await isFirstOrLast(post.id)
-    return {title: post.title, post, isFirst, isLast, summary: post.content?.slice(0, 100)}
+    return {title: post.title, post, isFirst, isLast, summary: post.content?.slice(0, 100), image: `/images/blog/${post.img_url.replace(".png", ".jpg")}`}
 }
 
 export const links: LinksFunction = () => [{rel: 'stylesheet', href: styles}]
 
-export const meta: MetaFunction = ({data}) => makeMeta((data as PostData).title, (data as PostData).summary)
+export const meta: MetaFunction = ({data}) => makeMeta((data as PostData).title, (data as PostData).summary, (data as PostData).image)
 
 export default function BlogPostPage() {
     const navigate = useNavigate()
