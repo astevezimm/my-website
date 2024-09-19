@@ -22,7 +22,7 @@ export async function fetchPostList() {
 }
 
 export async function fetchPost(url: string) {
-  return Post.findOne({url}).select('-content -img_url')
+  return Post.findOne({url}).select('-content')
 }
 
 export function extractCategories(posts: Array<{cat_url: string, category: string}>) {
