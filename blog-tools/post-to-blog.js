@@ -88,5 +88,5 @@ function getLastImageUrl(directory) {
   const files = fs.readdirSync(directory).filter(file => file.match(/^i\d+\.jpg$/))
   if (files.length === 0) return ''
   files.sort()
-  return `/images/blog/${files[files.length - 1]}`
+  return `${files[files.length - 1].replace('.jpg', '.png')}`
 }
