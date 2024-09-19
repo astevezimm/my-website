@@ -176,6 +176,9 @@ main {
     .post-list > li .blurb p {
         font-size: 1rem;
     }
+    .post-list > li .blurb a {
+        display: none;
+    }
 }
 
 .pagination {
