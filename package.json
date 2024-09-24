@@ -9,7 +9,9 @@
     "lint": "eslint --ignore-path .gitignore --cache --cache-location ./node_modules/.cache/eslint .",
     "start": "remix-serve ./build/server/index.js",
     "typecheck": "tsc",
-    "post": "node blog-tools/post-to-blog.js"
+    "post": "node blog-tools/post-to-blog.js",
+    "fetch": "node blog-tools/blog-admin.js fetch",
+    "update": "node blog-tools/blog-admin.js update"
   },
   "dependencies": {
     "@remix-run/node": "^2.12.0",

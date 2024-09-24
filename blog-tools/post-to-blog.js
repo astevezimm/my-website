@@ -1,24 +1,11 @@
-import {config} from 'dotenv'
+/* global process */
 import mongoose from 'mongoose'
 import readline from 'readline'
 import fs from 'fs'
 import _ from 'lodash'
+import {Post} from './data.js'
 
-config()
 mongoose.connect(process.env.DB_URL)
-
-const postSchema = new mongoose.Schema({
-  title: String,
-  content: String, // old content from old version of the site
-  markup_content: String, // new content for the new version of the site
-  url: String,
-  date: Date,
-  category: String,
-  cat_extended_descript: String,
-  cat_url: String,
-  img_url: String
-})
-const Post = mongoose.models.Post || mongoose.model("Post", postSchema)
 
 const rl = readline.createInterface({
   input: process.stdin,
