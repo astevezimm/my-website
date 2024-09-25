@@ -28,7 +28,7 @@ export default function BlogParent() {
       }
     </>
   )
-  if (blurb) posts[0].blurb = blurb
+  if (blurb && posts.length >= 3) posts[0].blurb = blurb
   
   return (
     <>
