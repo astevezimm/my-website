@@ -141,6 +141,7 @@ main {
         display: flex;
         & img {
             width: calc(33% - var(--gap)) !important;
+            min-width: 290px !important;
             border-radius: 0 1rem 0 1rem !important;
         }
     }
