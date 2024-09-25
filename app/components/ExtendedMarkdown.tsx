@@ -24,7 +24,7 @@ function createCustomComponent(mapkey: string, data: string, key: number) {
   return React.createElement(Component, { key, data })
 }
 
-const apendPart = (md: Array<string>, part: string) => `${md[md.length - 1]}\n${part}`
+const apendPart = (md: Array<string>, part: string) => `${md[md.length - 1]}  \n${part}`
 
 export default function ExtendedMarkdown({children, isPoems, isBlurb=false}: {children: string, isPoems: boolean, isBlurb?: boolean}) {
   if (isPoems) return processMarkdown(children, isPoems)
