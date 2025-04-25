@@ -1,4 +1,4 @@
-import {LinksFunction, LoaderFunction, type MetaFunction} from '@remix-run/node'
+import {LinksFunction, type MetaFunction} from '@remix-run/node'
 import styles from './portfolio.css?url'
 import {makeMeta} from '~/global'
 
@@ -52,7 +52,7 @@ function ProjectLink({title, href, image, alt}: ProjectLinkProps) {
   return (
     <li>
       <h2>{title}</h2>
-      <a href={href} target="_blank"><img src={image} alt={alt} /></a>
+      <a href={href} target="_blank" rel="noreferrer"><img src={image} alt={alt} /></a>
     </li>
   )
 }
