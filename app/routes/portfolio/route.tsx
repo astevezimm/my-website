@@ -29,13 +29,23 @@ export default function PortfolioPage() {
     <>
       <h1>Andrew Zimmerman&apos;s Portfolio</h1>
       <ul>
-        { /* Zimm Score */ }
-        <ProjectLink title="Much Todo About Anything" href='/posts/1' image='/images/kirby.jpg' alt="My dog" />
+        {/* <ProjectLink title="Zimm Score" href='/' image='' alt="" */}
+        {/* <ProjectLink title="Much tTodo About Anything" href='/' image='' alt="" /> */}
         <ProjectLink title="Personal Website" href='/posts/1' image='/images/kirby.jpg' alt="My dog" />
-        <ProjectLink title="Childhood Tribute" href='/posts/1' image='/images/kirby.jpg' alt="My dog" />
-        <ProjectLink title="One Rule Draft" href='/posts/1' image='/images/kirby.jpg' alt="My dog" />
-        <ProjectLink title="Making Potato Salad" href='https://potato-salad.herokuapp.com' image='/images/kirby.jpg' alt="My dog" />
-        <ProjectLink title="Leila Tribute" href='https://astevezimm.github.io' image='/images/kirby.jpg' alt="My dog" />
+        <ProjectLink
+          title="Childhood Tribute"
+          href='https://andy-zees-childhood-tribute-ea73851d705f.herokuapp.com/'
+          image='/images/portfolio/shed.jpg' alt="Shed"
+        />
+        <ProjectLink title="One Rule Draft" href='/' image='/images/portfolio/spaceship.jpg' alt="Spaceship" />
+        <ProjectLink
+          title="Making Potato Salad"
+          href='https://potato-salad.herokuapp.com'
+          image='/images/portfolio/tater-salad.jpg' alt="Potato Salad" />
+        <ProjectLink
+          title="Leila Tribute" href='https://astevezimm.github.io'
+          image='/images/portfolio/leila.jpg' alt="Leila"
+        />
       </ul>
     </>
   )
