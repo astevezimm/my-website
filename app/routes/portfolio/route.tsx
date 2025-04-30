@@ -7,44 +7,54 @@ export const meta: MetaFunction = () => makeMeta("Portfolio", "Andrew Zimmerman'
 export const links: LinksFunction = () => [{ rel: "stylesheet", href: styles }]
 
 export default function PortfolioPage() {
-  // Eventually, Zimm Score
-  
-  // Much Tado About About Anything
-  
-  // Personal website
-  // /posts/1
-  // /images/kirby.jpg
-  
-  // Childhood Tribute
-  
-  // One Rule
-  
-  // Potato Salad
-  // https://potato-salad.herokuapp.com
-  
-  // Leila Tribute
-  // https://astevezimm.github.io
-  
   return (
     <>
       <h1>Andrew Zimmerman&apos;s Portfolio</h1>
+      <button className='resume' onClick={() => window.open('/resume.pdf', '_blank')}>
+        Download Resume
+      </button>
       <ul>
-        {/* <ProjectLink title="Zimm Score" href='/' image='' alt="" */}
-        {/* <ProjectLink title="Much tTodo About Anything" href='/' image='' alt="" /> */}
-        <ProjectLink title="Personal Website" href='/posts/1' image='/images/kirby.jpg' alt="My dog" />
+        {/* <ProjectLink
+          title="Zimm Score"
+          href='/'
+          image='' alt=""
+          source='tabletop-scoring-v2'
+        /> */}
+        {/* <ProjectLink
+          title="Much tTodo About Anything"
+          href='/'
+          image='' alt=""
+          source='much-ttodo-about-anything'
+        /> */}
+        <ProjectLink
+          title="Personal Website"
+          href='/posts/1'
+          image='/images/kirby.jpg' alt="My dog"
+          source='my-website'
+        />
         <ProjectLink
           title="Childhood Tribute"
           href='https://andy-zees-childhood-tribute-ea73851d705f.herokuapp.com/'
           image='/images/portfolio/shed.jpg' alt="Shed"
+          source='love-letter'
         />
-        <ProjectLink title="One Rule Draft" href='/' image='/images/portfolio/spaceship.jpg' alt="Spaceship" />
+        <ProjectLink
+          title="Rule One Draft"
+          href='/'
+          image='/images/portfolio/spaceship.jpg' alt="Spaceship"
+          source='rule-one-draft-method'
+        />
         <ProjectLink
           title="Making Potato Salad"
           href='https://potato-salad.herokuapp.com'
-          image='/images/portfolio/tater-salad.jpg' alt="Potato Salad" />
+          image='/images/portfolio/tater-salad.jpg' alt="Potato Salad"
+          source='potato-salad'
+        />
         <ProjectLink
-          title="Leila Tribute" href='https://astevezimm.github.io'
+          title="Leila Tribute"
+          href='https://astevezimm.github.io'
           image='/images/portfolio/leila.jpg' alt="Leila"
+          source='astevezimm.github.io'
         />
       </ul>
     </>
@@ -56,13 +66,17 @@ type ProjectLinkProps = {
   href: string
   image: string
   alt: string
+  source: string
 }
 
-function ProjectLink({title, href, image, alt}: ProjectLinkProps) {
+function ProjectLink({title, href, image, alt, source}: ProjectLinkProps) {
   return (
     <li>
       <h2>{title}</h2>
       <a href={href} target="_blank" rel="noreferrer"><img src={image} alt={alt} /></a>
+      <button onClick={() => window.open(`https://github.com/astevezimm/${source}`, '_blank')}>
+        Source on Github
+      </button>
     </li>
   )
 }

@@ -6,19 +6,38 @@ h1 {
     text-shadow: 1px 1px 2px black;
 }
 
+button {
+    padding: .2rem .3rem;
+    border-radius: 7px;
+    cursor: pointer;
+    transition: background-color 200ms;
+    &:hover {
+        background-color: darkgray;
+    }
+}
+
+.resume {
+    width: fit-content;
+    margin: 0 auto 2rem;
+}
+
 ul {
     display: flex;
     flex-wrap: wrap;
     gap: 2rem;
     max-width: 66rem;
     justify-content: center;
-    margin: 0 auto;
+    margin: 0 auto 2rem;
 }
 
 li {
     list-style: none;
     text-align: center;
     width: 20rem;
+    & button {
+        position: relative;
+        z-index: 100 !important;
+    }
 }
 
 h2 {
