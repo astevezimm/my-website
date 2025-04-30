@@ -43,6 +43,7 @@ export default function PortfolioPage() {
           href='/'
           image='/images/portfolio/spaceship.jpg' alt="Spaceship"
           source='rule-one-draft-method'
+          wip
         />
         <ProjectLink
           title="Making Potato Salad"
@@ -67,9 +68,10 @@ type ProjectLinkProps = {
   image: string
   alt: string
   source: string
+  wip?: boolean
 }
 
-function ProjectLink({title, href, image, alt, source}: ProjectLinkProps) {
+function ProjectLink({title, href, image, alt, source, wip}: ProjectLinkProps) {
   return (
     <li>
       <h2>{title}</h2>
@@ -77,6 +79,7 @@ function ProjectLink({title, href, image, alt, source}: ProjectLinkProps) {
       <button onClick={() => window.open(`https://github.com/astevezimm/${source}`, '_blank')}>
         Source on Github
       </button>
+      {wip && <span className='wip'>Work in Progress</span>}
     </li>
   )
 }
