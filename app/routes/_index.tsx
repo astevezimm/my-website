@@ -9,7 +9,7 @@ export default function HomePage() {
   const navigate = useNavigate()
 
   useEffect(() => {
-    navigate("/posts/1")
+    navigate("/portfolio")
   }, [navigate])
 
   return null
