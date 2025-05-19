@@ -40,7 +40,7 @@ export default function PortfolioPage() {
         />
         <ProjectLink
           title="Rule One Draft"
-          href='/'
+          href='https://rule-one-draft-method-3e93703ac60b.herokuapp.com/'
           image='/images/portfolio/spaceship.jpg' alt="Spaceship"
           source='rule-one-draft-method'
           wip
