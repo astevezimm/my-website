@@ -43,7 +43,6 @@ export default function PortfolioPage() {
           href='https://rule-one-draft-method-3e93703ac60b.herokuapp.com/'
           image='/images/portfolio/spaceship.jpg' alt="Spaceship"
           source='rule-one-draft-method'
-          wip
         />
         <ProjectLink
           title="Making Potato Salad"
