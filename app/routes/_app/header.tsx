@@ -11,7 +11,7 @@ export default function Header({children}: { children: ReactNode }) {
           <span className="brand">ASZ</span>
           <NavLink className={isCatPage ? "active": ""} to="/posts">Blog</NavLink>
           <NavLink to="/about-me">About Me</NavLink>
-          <NavLink to="/unity3d-demos">Unity3D Demos</NavLink>
+          {/*<NavLink to="/unity3d-demos">Unity3D Demos</NavLink>*/}
         </span>
       </nav>
       <h1 className="subtitle constrained-width">
